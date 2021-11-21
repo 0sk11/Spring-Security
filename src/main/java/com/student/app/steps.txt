@@ -1,0 +1,19 @@
+Setting up Security
+Step 1) Create a child package called security
+Step 2) Create a class (ApplicationSecurityConfig) which extends WebSecurityConfigurerAdapter
+Step 3) Create a overriding method called configure
+        * Basically here we define what endpoints we need to secure and what not
+Step 4) Creating user and overriding default specs
+        * Override a interface called UserDetailsService
+            i) use builder to specify User Details
+        * Set up password configaration to let our application know what encoding to use
+            i) Create a @Configration class (PasswordConfig) which creates a @Bean PasswordEncoder
+            ii) In our class we are going to autowire this bean as constructor to the class
+
+Step 5) Setting Authorisation
+        * Create an enum defining permission
+        * Create another enum for defining role
+            i) This enum will be used to define the role
+
+******** Using Annotation :
+hasRole('ROLE_') hasAnyRole('ROLE_') hasAuthority('permission')hasAnyAuthority('permission')
